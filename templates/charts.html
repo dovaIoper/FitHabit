@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}Progress Charts{% endblock %}
+{% block content %}
+<div class="journal-container">
+    <h2 class="page-heading">Progress Charts</h2>
+
+    {% if weekly_charts %}
+        {% for chart in weekly_charts %}
+            <div class="card mb-4 p-3">
+                <h5 class="mb-3">Week: {{ chart.week_label }}</h5>
+                <canvas id="chart_{{ loop.index }}"></canvas>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="journal-entry">
+            <p>No chart data available.</p>
+        </div>
+    {% endif %}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const chartData = {{ weekly_charts_json | safe }};
+    chartData.forEach((weekChart, index) => {
+        const ctx = document.getElementById('chart_' + (index + 1)).getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: weekChart.labels,
+                datasets: weekChart.datasets
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#333'
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: '#555' }
+                    },
+                    y: {
+                        ticks: { color: '#555' }
+                    }
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}

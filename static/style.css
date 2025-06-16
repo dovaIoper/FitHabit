@@ -1,0 +1,369 @@
+/* ================= BASE STYLES ================= */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding: 2rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+h2 {
+  text-align: center;
+  color: #d08abe;
+  margin-bottom: 1rem;
+}
+
+h5 {
+  color: #495057;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f4e8ec;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo .highlight {
+  color: #e19c9c;
+  align-items: center;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* ================= BUTTONS ================= */
+.btn,
+.btn-secondary {
+  padding: 0.5rem 1rem;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn {
+  background-color: #d0bfff;
+}
+
+.btn:hover {
+  background-color: #5a89e2;
+}
+
+.btn-secondary {
+  background-color: #a0c4ff;
+}
+
+.submit-btn {
+  background-color: #a06cd5;
+  padding: 0.7rem 2rem;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+/* ================= FORM ELEMENTS ================= */
+input,
+textarea,
+select,
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin: 0.5rem 0;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+}
+
+.form-input:focus {
+  border-color: #79a1f2;
+  outline: none;
+  background-color: #f0f4ff;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.form-group label {
+  font-weight: 600;
+}
+
+form .form-group {
+  margin-bottom: 1rem;
+}
+
+/* ================= CARD STYLES ================= */
+.card,
+.form-card,
+.report-card,
+.journal-entry {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.form-card:hover,
+.report-card:hover,
+.journal-entry:hover {
+  transform: translateY(-4px);
+}
+
+/* ================= TABLES ================= */
+.report-table,
+.weekly-summary table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #fff;
+  color: #333;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.report-table th,
+.report-table td,
+.weekly-summary td,
+.weekly-summary th {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+}
+
+.table thead th,
+.weekly-summary thead {
+  background-color: #d9eafa;
+  color: #000;
+  border-bottom: 2px solid #a3cef1;
+  font-weight: 600;
+}
+
+/* ================= FLASH MESSAGES ================= */
+.flash {
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.flash-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.flash-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* ================= JOURNAL ENTRIES ================= */
+.journal-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #fffdfd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.journal-entry {
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  border-left: 5px solid #bdb2ff;
+}
+
+.journal-entry h4 {
+  margin: 0;
+  color: #6c5ce7;
+  font-size: 1.1rem;
+}
+
+.journal-entry p {
+  margin: 0.25rem 0 0 0;
+  color: #444;
+  font-size: 1rem;
+}
+
+.page-heading {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.no-entries,
+.no-data-msg {
+  text-align: center;
+  color: #999;
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+/* ================= WEEKLY SUMMARY ================= */
+.weekly-summary {
+  border: 2px solid #ececec;
+  border-radius: 12px;
+  background-color: #fefefe;
+  box-shadow: 0 2px 10px rgba(180, 180, 180, 0.1);
+  padding: 10px;
+}
+
+.weekly-summary .card-header {
+  background-color: #e8f0fe;
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  border-radius: 12px 12px 0 0;
+  padding: 10px 15px;
+}
+
+.weekly-summary .card-body {
+  background-color: #fff;
+  padding: 15px;
+}
+
+.weekly-summary .alert-info {
+  background-color: #d8f3dc;
+  color: #22543d;
+  font-size: 15px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.weekly-summary .text-muted {
+  font-size: 13px;
+  margin-top: 10px;
+  color: #555;
+}
+
+/* ================= CHARTS ================= */
+canvas {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+}
+
+/* ================= HERO ================= */
+.hero {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* ================= REPORT GRID ================= */
+.report-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.report-container .summary,
+.report-container .message {
+  flex: 1;
+  padding: 1rem;
+  background-color: #fceaff;
+  border-radius: 10px;
+}
+
+.report-container .summary p {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #555;
+}
+
+/* ================= DARK MODE ================= */
+[data-theme="dark"] {
+    --bg: #121212;
+    --text: #e19c9c;
+}
+
+[data-theme="dark"] body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+[data-theme="dark"] p {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .navbar {
+    background-color: #1e1e1e;
+}
+
+[data-theme="dark"] .nav-item {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .logo {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .mb-3 {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .nav-links a {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .btn {
+    color: #1e1e1e !important;
+}
+
+[data-theme="dark"] .journal-container {
+    background-color: #1e1e1e;
+}
+
+[data-theme="dark"] .page-heading {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .dropdown-item {
+    color: #1e1e1e !important;
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .journal-entry,
+[data-theme="dark"] .report-card {
+    background-color: #2b2b2b;
+    color: #e19c9c;
+}

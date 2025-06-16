@@ -1,0 +1,13 @@
+<!-- register.html -->
+{% extends 'base.html' %}
+{% block content %}
+<h2>Create Account</h2>
+<form method="POST">
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <div align="center">
+        <button class="btn" type="submit">Register</button>
+    </div>
+</form>
+{% endblock %}

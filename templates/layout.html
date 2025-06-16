@@ -1,0 +1,49 @@
+<!-- templates/layout.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FitHabit</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="pastel-theme light-mode">
+    <nav>
+        <div class="logo">FitHabit</div>
+        <ul>
+            {% if session.get('user_id') %}
+                <li><a href="{{ url_for('input_form') }}">Track Progress</a></li>
+                <li><a href="{{ url_for('weekly_report') }}">Weekly Report</a></li>
+                <li><a href="{{ url_for('settings') }}">Settings</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% endif %}
+        </ul>
+        <button id="theme-toggle">☀️ / 🌙</button>
+    </nav>
+
+    <main>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class="flashes">
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </main>
+
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        toggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+        });
+    </script>
+</body>
+</html>

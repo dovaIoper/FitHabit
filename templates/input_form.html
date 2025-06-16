@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Track Your Habits{% endblock %}
+
+{% block content %}
+<div class="card">
+  <h2>Daily Habit Tracker</h2>
+  <form method="POST">
+    <label>Date:</label>
+    <input type="date" name="date" value="{{ date or '' }}">
+
+    <label>Sleep (hours):</label>
+    <input type="number" step="0.1" name="sleep" value="{{ sleep or '' }}">
+
+    <label>Healthy Eating (1–10):</label>
+    <input type="number" step="0.1" name="eat" value="{{ eat or '' }}">
+
+    <label>Study (hours):</label>
+    <input type="number" step="0.1" name="study" value="{{ study or '' }}">
+
+    <label>Physical Activity (minutes):</label>
+    <input type="number" step="0.1" name="exercise" value="{{ exercise or '' }}">
+
+    <label>Notes:</label>
+    <textarea name="notes">{{ notes or '' }}</textarea>
+
+    <div align="center">
+        <button type="submit" class="btn">Save Progress</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
