@@ -325,6 +325,10 @@ canvas {
     color: #ffffff;
 }
 
+[data-theme="dark"] th {
+    color: ##1e1e1e;
+}
+
 [data-theme="dark"] .navbar {
     background-color: #1e1e1e;
 }
