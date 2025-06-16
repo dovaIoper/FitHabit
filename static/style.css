@@ -325,7 +325,7 @@ canvas {
     color: #ffffff;
 }
 
-[data-theme="dark"] th.black {
+[data-theme="dark"] td {
     color: #1e1e1e;
 }
 
