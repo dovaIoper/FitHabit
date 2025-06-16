@@ -325,8 +325,8 @@ canvas {
     color: #ffffff;
 }
 
-[data-theme="dark"] th {
-    color: #e19c9c;
+[data-theme="dark"] th.black {
+    color: #1e1e1e;
 }
 
 [data-theme="dark"] .navbar {
